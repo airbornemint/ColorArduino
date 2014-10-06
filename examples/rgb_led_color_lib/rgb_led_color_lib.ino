@@ -1,7 +1,11 @@
-#include <color.h>
+/* LucidTronix HSB RGB Color Library
+ * For instructions, details and schematic, See:
+ * http://www.lucidtronix.com/tutorials/19
+ */
 
-// these are the pins connected to
-// the RGB LEDs
+#include <Color.h>
+
+// these are the pins connected to the RGB LEDs
 int leds[] = {5,6,9}; 
 Color cur_color = Color(1,1,1);
 float hue = 0;
