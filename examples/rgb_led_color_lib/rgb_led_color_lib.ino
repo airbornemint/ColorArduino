@@ -6,7 +6,7 @@
 #include <Color.h>
 
 // these are the pins connected to the RGB LEDs
-int leds[] = {5,6,9}; 
+int leds[] = {9,10,11}; 
 Color cur_color = Color(1,1,1);
 float hue = 0;
 
@@ -14,7 +14,11 @@ float hue = 0;
 void setup()                    
 {
   for(int i = 0 ; i < 3; i++ ){
-    pinMode(leds[i], OUTPUT); 
+    pinMode(leds[i], OUTPUT);
+    digitalWrite(leds[i], LOW);
+    delay(300); 
+    digitalWrite(leds[i], HIGH);
+    delay(300);
   }
 }
 
@@ -28,8 +32,8 @@ void loop()
 void rainbow(){
   hue += 0.06;
   if ( hue >=1 ) hue = 0;
-  sat = 1.0;
-  val = 0.4;
+  float sat = 0.8;
+  float val = 0.2;
   cur_color.convert_hcl_to_rgb(hue,sat,val);
   display_color(cur_color);
   delay(20);
