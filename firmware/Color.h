@@ -7,7 +7,9 @@
 #ifndef Color_h
 #define Color_h
 
-#if defined(ARDUINO) && ARDUINO >= 100
+#ifdef PARTICLE
+#include "application.h"
+#elif defined(ARDUINO) && ARDUINO >= 100
 #include "Arduino.h"
 #else
 #include "WProgram.h"
